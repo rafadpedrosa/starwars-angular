@@ -1,0 +1,12 @@
+<div *ngIf="character">
+  <h2>{{ character.name | uppercase }} Details</h2>
+  <mat-form-field>
+      <input matInput readonly [(ngModel)]="character.name" placeholder="Name"/>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput readonly [(ngModel)]="character.gender" placeholder="Gender"/>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput readonly [(ngModel)]="character.homeworld" placeholder="Home World"/>
+  </mat-form-field>
+</div>

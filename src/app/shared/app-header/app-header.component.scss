@@ -1,0 +1,15 @@
+span.img-icon img {
+  width: 100%;
+}
+
+span.img-icon {
+  width: 55px;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%  !important;
+}
