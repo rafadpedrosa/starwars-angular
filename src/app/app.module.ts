@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,11 @@ import { MessageService } from './services/message.service';
 import { PlanetService } from './services/planet.service';
 import { MaterialModule } from './material.module';
 import { AppHeaderComponent } from './shared/app-header/app-header.component';
+import { PlanetFormComponent } from './planet-form/planet-form.component';
+import { VaderForceComponent } from './shared/vader-force/vader-force.component';
+import { BrandComponent } from './shared/brand/brand.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +26,16 @@ import { AppHeaderComponent } from './shared/app-header/app-header.component';
     CharactersComponent,
     CharacterFormComponent,
     MessagesComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    PlanetFormComponent,
+    VaderForceComponent,
+    BrandComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     MaterialModule,

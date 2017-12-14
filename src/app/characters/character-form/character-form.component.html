@@ -1,12 +1,68 @@
 <div *ngIf="character">
-  <h2>{{ character.name | uppercase }} Details</h2>
-  <mat-form-field>
-      <input matInput readonly [(ngModel)]="character.name" placeholder="Name"/>
-  </mat-form-field>
-  <mat-form-field>
-      <input matInput readonly [(ngModel)]="character.gender" placeholder="Gender"/>
-  </mat-form-field>
-  <mat-form-field>
-      <input matInput readonly [(ngModel)]="character.homeworld" placeholder="Home World"/>
-  </mat-form-field>
+
+  <mat-card class="content-spacer-cards">
+    <!--<mat-form-field>-->
+    <!--<input matInput readonly class=col-md-3 [(ngModel)]="character.url" type="text" placeholder="Url">-->
+    <!--</mat-form-field>-->
+    <h2>{{ character.name | uppercase }} Details teste</h2>
+    <div class="row">
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.name" type="text" placeholder="Name">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.height" type="text" placeholder="Height">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.mass" type="text" placeholder="Mass">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.hair_color" type="text" placeholder="Hair_color">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.skin_color" type="text" placeholder="Skin_color">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.eye_color" type="text" placeholder="Eye_color">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.birth_year" type="text" placeholder="Birth_year">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.gender" type="text" placeholder="Gender">
+      </mat-form-field>
+    </div>
+    <h3>Relations</h3>
+    <div class="row">
+      <hr>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.homeworld" type="text" placeholder="Homeworld">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.films" type="text" placeholder="Films">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.species" type="text" placeholder="Species">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.vehicles" type="text" placeholder="Vehicles">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.starships" type="text" placeholder="Starships">
+      </mat-form-field>
+    </div>
+    <hr>
+    <h3>Miscellaneous</h3>
+    <div class="row">
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.created" type="text" placeholder="Created">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input matInput readonly [(ngModel)]="character.edited" type="text" placeholder="Edited">
+      </mat-form-field>
+      <div class="clearfix"></div>
+    </div>
+  </mat-card>
+  <app-planet-form [planet]="character.planet"></app-planet-form>
 </div>
+
+

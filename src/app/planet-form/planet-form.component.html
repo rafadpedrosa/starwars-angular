@@ -1,0 +1,56 @@
+<mat-card *ngIf="planet" class="content-spacer-cards">
+  <!--<mat-form-field>-- class=col-md-3>
+    <!--<input type="text" readonly matInput [(ngModel)]="planet.url" placeholder="Url">-->
+  <!--</mat-form-field>-->
+  <h2>{{ planet.name | uppercase }} Details</h2>
+  <div class="row">
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.name" placeholder="Name">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.rotation_period" placeholder="Rotation_period">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.orbital_period" placeholder="Orbital_period">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.diameter" placeholder="Diameter">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.climate" placeholder="Climate">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.gravity" placeholder="Gravity">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.terrain" placeholder="Terrain">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.surface_water" placeholder="Surface_water">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.population" placeholder="Population">
+    </mat-form-field>
+  </div>
+  <h3>Relations</h3>
+  <div class="row">
+    <hr>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.residents" placeholder="Residents">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.films" placeholder="Films">
+    </mat-form-field>
+  </div>
+  <h3>Miscellaneous</h3>
+  <div class="row">
+    <hr>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.created" placeholder="Created">
+    </mat-form-field>
+    <mat-form-field class="col-md-3">
+      <input type="text" readonly matInput [(ngModel)]="planet.edited" placeholder="Edited">
+    </mat-form-field>
+  </div>
+  <div class="clearfix"></div>
+</mat-card>

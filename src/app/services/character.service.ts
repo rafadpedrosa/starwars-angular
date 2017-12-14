@@ -22,8 +22,6 @@ export class CharacterService {
     switch (dependencyName) {
       case this.dependencies[0]:
         this.planetService.get(pCharacter.homeworld).subscribe((pPlanet: Planet) => {
-          console.log(pPlanet);
-          console.log(pCharacter);
           pCharacter.planet = pPlanet;
         });
         break;

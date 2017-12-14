@@ -8,7 +8,7 @@ import {Planet} from '../model/planet';
 @Injectable()
 export class PlanetService {
 
-  private api = 'https://swapi.co/api/planet/'
+  private api = 'https://swapi.co/api/planets/'
 
   constructor(private messageService: MessageService, private http: HttpClient) {
   }
@@ -17,8 +17,8 @@ export class PlanetService {
     return this.http.get<Planet>(url);
   }
 
-  getWorlds(): Observable<Pageble<Planet>> {
-    this.messageService.add('Pagable Worlds fetched!');
+  getPlanets(): Observable<Pageble<Planet>> {
+    this.messageService.add('Pagable Planet fetched!');
     return this.http.get<Pageble<Planet>>(this.api);
   }
 }

@@ -32,18 +32,13 @@ export class CharactersComponent implements OnInit {
     });
   }
 
-  getCharacters() {
+  ngOnInit() {
     this.service.getCharacters().subscribe((pCharacters: Pageble<Character>) => {
       this.pageableChar = pCharacters;
       this.characters_all = pCharacters.results;
       this.characters_all.forEach((character: Character) => {
-        console.log(character.planet);
         this.service.getDependency(character, 'planet');
       });
     });
-  }
-
-  ngOnInit() {
-    this.getCharacters();
   }
 }

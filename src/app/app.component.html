@@ -3,21 +3,19 @@
 <div class="content-spacer-top"></div>
 
 <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-md-8 col-sm-offset-0 col-sm-12">
-<app-messages ></app-messages>
-<mat-card class="content-spacer-cards">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</mat-card>
-<mat-card class="content-spacer-cards">
 
-  <app-characters></app-characters>
-</mat-card>
-  <footer class="">
-    <div layout="row" class="mat-primary">
-      <h2>Created by rafadpedrosa@gmail.com</h2>
-    </div>
-  </footer>
+  <router-outlet></router-outlet>
+
 </div>
 
 <!--<router-outlet></router-outlet>-->
+<!--<app-brand [title]="title" ></app-brand>-->
+
+<!--<app-vader-force></app-vader-force>-->
+
+<!--<app-messages></app-messages>-->
+
+<!--<mat-card class="content-spacer-cards">-->
+  <!--<app-characters></app-characters>-->
+<!--</mat-card>-->
+<!--<app-footer></app-footer>-->

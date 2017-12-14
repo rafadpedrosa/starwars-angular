@@ -1,0 +1,28 @@
+<mat-card class="content-spacer-cards">
+  <div class="col-md-6 vader-wrapper">
+    <img class="pull-left" src="../assets/vader-full.png" matTooltip="SHIIiii, SHUUuuu..."
+         [matTooltipPosition]="'left'">
+  </div>
+  <div class="col-md-offset-1 col-md-4">
+    <div class="well well-lg text-style">
+      <span class="quotes">"</span>
+      May the force be with you...
+      <span class="quotes">"</span>
+    </div>
+    <hr>
+    <!--<div class="well well-lg" style="width: 80px"-->
+         <!--[@boxState]="blockAnimation"-->
+          <!--&gt;-->
+    <!--</div>-->
+    <!--<hr>-->
+    <!--<div class="well well-lg" style="width: 80px"-->
+         <!--[@boxState]="blockAnimation">-->
+    <!--</div>-->
+    <hr>
+    <div [@popOverState]="stateName">
+      <p>Hello! I'm a helpful message.</p>
+    </div>
+    <!--<button mat-raised-button (click)="toggle()"> TESTE</button>-->
+  </div>
+  <div class="clearfix"></div>
+</mat-card>

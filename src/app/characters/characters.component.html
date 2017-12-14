@@ -1,16 +1,22 @@
-<app-character-form [character]="character"></app-character-form>
-<h2>My Characters</h2>
+<app-messages></app-messages>
 
-<mat-list>
-  <mat-list-item
-    *ngFor="let char of characters_all">
-    {{char.name }} |
-    {{char.gender }} |
-    {{ char.planet ? char.planet.name : '---' }} |
-    <button mat-raised-button
-            color="primary"
-            class="pull-right"
-            (click)="character = char">Detail
-    </button>
-  </mat-list-item>
-</mat-list>
+<app-character-form [character]="character"></app-character-form>
+
+<mat-card class="content-spacer-cards">
+  <h2>My Characters</h2>
+
+  <mat-list>
+    <mat-list-item
+      *ngFor="let char of characters_all">
+      {{char.name }} |
+      {{char.gender }} |
+      {{ char.planet ? char.planet.name : '---' }} |
+      <button mat-raised-button
+              color="primary"
+              class="pull-right"
+              (click)="character = char">Detail
+      </button>
+    </mat-list-item>
+  </mat-list>
+
+</mat-card>
