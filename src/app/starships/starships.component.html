@@ -6,16 +6,39 @@
 
 <mat-card class="content-spacer-cards">
   <h2>Ships list</h2>
+  <mat-table #table [dataSource]="starshipDataSource">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+      <mat-cell *matCellDef="let starship"> {{starship.name}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="model">
+      <mat-header-cell *matHeaderCellDef> Model</mat-header-cell>
+      <mat-cell *matCellDef="let starship"> {{starship.model}}</mat-cell>
+    </ng-container>
 
-  <mat-list>
-    <mat-list-item
-      *ngFor="let ship of starships_all">
-      {{ship.name }} |
-      <button mat-raised-button
-              color="primary"
-              class="pull-right"
-              (click)="starship = ship">Detail
-      </button>
-    </mat-list-item>
-  </mat-list>
+    <ng-container matColumnDef="manufacturer">
+      <mat-header-cell *matHeaderCellDef> Manufacturer</mat-header-cell>
+      <mat-cell *matCellDef="let starship"> {{starship.manufacturer}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="cost_in_credits">
+      <mat-header-cell *matHeaderCellDef> Cost in credits</mat-header-cell>
+      <mat-cell *matCellDef="let starship"> {{starship.cost_in_credits}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let ship">
+        <button mat-raised-button
+                color="primary"
+                class="pull-right"
+                (click)="starship = ship">Detail
+        </button>
+      </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
 </mat-card>

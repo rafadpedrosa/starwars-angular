@@ -1,28 +1,31 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Starship} from '../model/starship';
 import {Pageble} from '../model/pageble';
 import {MessageService} from '../services/message.service';
 import {StarshipsService} from '../services/starships.service';
+import {MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-starships',
   templateUrl: './starships.component.html',
   styleUrls: ['./starships.component.scss']
 })
-export class StarshipsComponent implements OnInit {
+export class StarshipsComponent implements OnInit, OnDestroy {
   starships_all: Starship[];
   starship: Starship = null;
+  displayedColumns = ['name', 'model', 'manufacturer', 'cost_in_credits', 'actions'];
+  starshipDataSource: MatTableDataSource<Starship>;
+
   pageableStarShips: Pageble<Starship>;
-  private block = 5;
 
   constructor(private service: StarshipsService,
               private messageService: MessageService) {
   }
 
-  onSelect(character) {
-    this.messageService.add('Starships ' + character.name + ' fetched for edit')
-    this.starship = character;
-  }
+  // onSelect(starship) {
+  //   this.messageService.add('Starships ' + starship.name + ' fetched for edit')
+  //   this.starship = starship;
+  // }
 
   get(url) {
     this.service.get(url).subscribe((pStarship: Starship) => {
@@ -30,17 +33,32 @@ export class StarshipsComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    console.log('ngOnDestroy - ships')
+      this.clearfields();
+  }
+
   ngOnInit() {
+    console.log('ngOnInit - ships')
+    this.starshipDataSource = new MatTableDataSource(this.starships_all);
+
     this.service.getStarShips().subscribe((pStarships: Pageble<Starship>) => {
       this.pageableStarShips = pStarships;
       this.starships_all = pStarships.results;
+      this.starshipDataSource = new MatTableDataSource(this.starships_all);
       this.starships_all.forEach((pStarship: Starship) => {
         pStarship.characters = [];
         pStarship.pilots.forEach((pUrl: string) => {
           this.service.getDependency(pStarship, pUrl, 'pilot');
         });
-        this.starship = pStarship;
       });
     });
+  }
+
+  private clearfields() {
+    this.starships_all = [];
+    this.starship = null;
+    this.starshipDataSource = null
+    this.pageableStarShips = null;
   }
 }

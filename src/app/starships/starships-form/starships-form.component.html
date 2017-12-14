@@ -3,7 +3,7 @@
     <!--<mat-form-field>-- class=col-md-3>
     <!--<input type="text" matInput readonly [(ngModel)]="starship.url" placeholder="Url">-->
     <!--</mat-form-field>-->
-    <h2>{{ starship.name | uppercase }} Details</h2>
+    <h2>Starship {{ starship.name | uppercase }} Details</h2>
     <div class="row">
       <mat-form-field class="col-md-3">
         <input type="text" matInput readonly [(ngModel)]="starship.name" placeholder="Uame">
@@ -69,8 +69,24 @@
     </div>
   </mat-card>
 
-  <app-character-form
-    *ngFor="let character of starship.characters" [character]="character"></app-character-form>
+  <mat-expansion-panel class="content-spacer-cards">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h2>Pilots</h2>
+      </mat-panel-title>
+      <mat-panel-description class="content-spacer-cards-less" >
+        <p style="text-align: center" *ngIf="starship.pilots.length <= 0">(empty)</p>
+        <p style="text-align: center" *ngIf="starship.pilots.length > 0">(Has pilot)</p>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-character-form
+      *ngFor="let character of starship.characters" [character]="character"></app-character-form>
+
+    <h4 style="text-align: center" *ngIf="starship.pilots.length <= 0">Any know pilot drive this ship</h4>
+
+  </mat-expansion-panel>
+
 </div>
 
 

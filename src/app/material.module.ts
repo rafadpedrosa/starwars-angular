@@ -1,20 +1,19 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import {
-  BrowserAnimationsModule,
-  NoopAnimationsModule
-} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 import {
   MatButtonModule,
+  MatCardModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
   MatMenuModule,
   MatToolbarModule,
-  MatIconModule,
-  MatCardModule,
-  MatListModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatTableModule
 } from '@angular/material';
 
 @NgModule({
@@ -29,7 +28,9 @@ import {
     MatInputModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   exports: [
     MatButtonModule,
@@ -42,7 +43,10 @@ import {
     MatInputModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatExpansionModule,
+    MatTableModule
   ]
 })
-export class MaterialModule {}
+export class MaterialModule {
+}

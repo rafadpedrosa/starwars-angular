@@ -23,8 +23,6 @@ export class StarshipsService {
     switch (dependencyName) {
       case this.dependencies[0]:
         this.characterService.get(pUrl).subscribe((pCharacter: Character) => {
-          console.log(pStarShip)
-          console.log(pStarShip.characters)
           pStarShip.characters.push(pCharacter);
         });
         break;

@@ -7,18 +7,28 @@
 <mat-card class="content-spacer-cards">
   <h2>Characters List</h2>
 
-  <mat-list>
-    <mat-list-item
-      *ngFor="let char of characters_all">
-      {{char.name }} |
-      {{char.gender }} |
-      {{ char.planet ? char.planet.name : '---' }} |
-      <button mat-raised-button
-              color="primary"
-              class="pull-right"
-              (click)="character = char">Detail
-      </button>
-    </mat-list-item>
-  </mat-list>
+  <mat-table #table [dataSource]="characterDataSource">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.name}}</mat-cell>
+    </ng-container>
 
+    <ng-container matColumnDef="planet">
+      <mat-header-cell *matHeaderCellDef> Planet</mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{ character.planet ? character.planet.name : '---' }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let char">
+        <button mat-raised-button
+                color="primary"
+                class="pull-right"
+                (click)="character = char">Detail
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
 </mat-card>
