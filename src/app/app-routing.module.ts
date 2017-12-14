@@ -3,11 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import {CharactersComponent} from "./characters/characters.component";
 import {CharacterFormComponent} from "./characters/character-form/character-form.component";
 import {HomeComponent} from "./home/home.component";
+import {StarshipsComponent} from "./starships/starships.component";
+import {StarshipsFormComponent} from "./starships/starships-form/starships-form.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'characters', component: CharactersComponent },
-  { path: 'character', component: CharacterFormComponent }
+  { path: 'character', component: CharacterFormComponent },
+  { path: 'starships', component: StarshipsComponent },
+  { path: 'starship', component: StarshipsFormComponent }
 ];
 
 @NgModule({

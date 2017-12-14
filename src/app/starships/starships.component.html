@@ -1,0 +1,21 @@
+<app-brand [endTitle]="' form'" [beginTitle]="'Starships'"></app-brand>
+
+<app-messages></app-messages>
+
+<app-starships-form [starship]="starship"></app-starships-form>
+
+<mat-card class="content-spacer-cards">
+  <h2>Ships list</h2>
+
+  <mat-list>
+    <mat-list-item
+      *ngFor="let ship of starships_all">
+      {{ship.name }} |
+      <button mat-raised-button
+              color="primary"
+              class="pull-right"
+              (click)="starship = ship">Detail
+      </button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

@@ -19,6 +19,9 @@ import { VaderForceComponent } from './shared/vader-force/vader-force.component'
 import { BrandComponent } from './shared/brand/brand.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { StarshipsComponent } from './starships/starships.component';
+import { StarshipsService } from './services/starships.service';
+import { StarshipsFormComponent } from './starships/starships-form/starships-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { FooterComponent } from './shared/footer/footer.component';
     VaderForceComponent,
     BrandComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    StarshipsComponent,
+    StarshipsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   providers: [
     CharacterService,
     MessageService,
-    PlanetService
+    PlanetService,
+    StarshipsService
   ],
   bootstrap: [AppComponent]
 })

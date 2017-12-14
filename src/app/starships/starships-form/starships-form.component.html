@@ -1,0 +1,79 @@
+<div *ngIf="starship">
+  <mat-card class="content-spacer-cards">
+    <!--<mat-form-field>-- class=col-md-3>
+    <!--<input type="text" matInput readonly [(ngModel)]="starship.url" placeholder="Url">-->
+    <!--</mat-form-field>-->
+    <h2>{{ starship.name | uppercase }} Details</h2>
+    <div class="row">
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.name" placeholder="Uame">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.model" placeholder="Uodel">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.manufacturer" placeholder="Uanufacturer">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.cost_in_credits" placeholder="Uost_in_credits">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.length" placeholder="Uength">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.max_atmosphering_speed"
+               placeholder="Uax_atmosphering_speed">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.crew" placeholder="Urew">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.passengers" placeholder="Uassengers">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.cargo_capacity" placeholder="Uargo_capacity">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.consumables" placeholder="Uonsumables">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.hyperdrive_rating" placeholder="Uyperdrive_rating">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.MGLT" placeholder="UGLT">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.starship_class" placeholder="Utarship_class">
+      </mat-form-field>
+    </div>
+    <h3>Relations</h3>
+    <div class="row">
+      <hr>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.pilots" placeholder="Uilots">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.films" placeholder="Uilms">
+      </mat-form-field>
+
+    </div>
+    <h3>Miscellaneous</h3>
+    <div class="row">
+      <hr>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.created" placeholder="Ureated">
+      </mat-form-field>
+      <mat-form-field class="col-md-3">
+        <input type="text" matInput readonly [(ngModel)]="starship.edited" placeholder="Udited">
+      </mat-form-field>
+    </div>
+  </mat-card>
+
+  <app-character-form
+    *ngFor="let character of starship.characters" [character]="character"></app-character-form>
+</div>
+
+
+
+
+
