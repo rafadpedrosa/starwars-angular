@@ -3,7 +3,6 @@ import {Character} from '../model/character';
 import {CharacterService} from '../services/character.service';
 import {MessageService} from '../services/message.service';
 import {Pageble} from '../model/pageble';
-import {PlanetService} from '../services/planet.service';
 import {MatTableDataSource} from '@angular/material';
 
 @Component({
@@ -44,8 +43,8 @@ export class CharactersComponent implements OnInit, OnDestroy {
     this.clearfields();
   }
 
-  ngOnInit() {
-    this.service.getCharacters().subscribe((pCharacters: Pageble<Character>) => {
+  reloadTable(pageEvent = null) {
+    this.service.getCharacters(pageEvent).subscribe((pCharacters: Pageble<Character>) => {
       this.pageableChar = pCharacters;
       this.characters_all = pCharacters.results;
       this.characterDataSource = new MatTableDataSource(this.characters_all);
@@ -53,5 +52,9 @@ export class CharactersComponent implements OnInit, OnDestroy {
         this.service.getDependency(character, 'planet');
       });
     });
+  }
+
+  ngOnInit() {
+    this.reloadTable();
   }
 }

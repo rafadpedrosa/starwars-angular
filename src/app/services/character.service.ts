@@ -34,8 +34,9 @@ export class CharacterService {
     return this.http.get<Character>(url);
   }
 
-  getCharacters(): Observable<Pageble<Character>> {
+  getCharacters(pageEvent = null): Observable<Pageble<Character>> {
     this.messageService.add('Pagable Charactes fetched!');
-    return this.http.get<Pageble<Character>>(this.api);
+    const url = pageEvent ? this.api + '?page=' + (pageEvent.pageIndex + 1) : this.api;
+    return this.http.get<Pageble<Character>>(url);
   }
 }

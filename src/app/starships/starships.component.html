@@ -27,7 +27,7 @@
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let ship">
         <button mat-raised-button
                 color="primary"
@@ -41,4 +41,14 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
+
+  <div *ngIf="starships_all">
+    <mat-paginator
+      [length]="pageableStarShips.count"
+      [pageSize]="10"
+      [pageSizeOptions]="[10]"
+      (page)="reloadTable($event)">
+
+    </mat-paginator>
+  </div>
 </mat-card>

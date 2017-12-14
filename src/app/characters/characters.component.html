@@ -31,4 +31,14 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
+
+  <div *ngIf="characters_all">
+    <mat-paginator
+      [length]="pageableChar.count"
+      [pageSize]="10"
+      [pageSizeOptions]="[10]"
+      (page)="reloadTable($event)">
+
+    </mat-paginator>
+  </div>
 </mat-card>

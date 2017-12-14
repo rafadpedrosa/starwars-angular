@@ -35,8 +35,9 @@ export class StarshipsService {
     return this.http.get<Starship>(url);
   }
 
-  getStarShips(): Observable<Pageble<Starship>> {
+  getStarShips(pageEvent = null): Observable<Pageble<Starship>> {
     this.messageService.add('Pagable Starships fetched!');
-    return this.http.get<Pageble<Starship>>(this.api);
+    const url = pageEvent ? this.api + '?page=' + (pageEvent.pageIndex + 1) : this.api;
+    return this.http.get<Pageble<Starship>>(url);
   }
 }

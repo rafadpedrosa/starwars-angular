@@ -35,14 +35,13 @@ export class StarshipsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     console.log('ngOnDestroy - ships')
-      this.clearfields();
+    this.clearfields();
   }
 
-  ngOnInit() {
-    console.log('ngOnInit - ships')
+  reloadTable(event = null) {
     this.starshipDataSource = new MatTableDataSource(this.starships_all);
 
-    this.service.getStarShips().subscribe((pStarships: Pageble<Starship>) => {
+    this.service.getStarShips(event).subscribe((pStarships: Pageble<Starship>) => {
       this.pageableStarShips = pStarships;
       this.starships_all = pStarships.results;
       this.starshipDataSource = new MatTableDataSource(this.starships_all);
@@ -53,6 +52,11 @@ export class StarshipsComponent implements OnInit, OnDestroy {
         });
       });
     });
+  }
+
+  ngOnInit() {
+    console.log('ngOnInit - ships');
+    this.reloadTable();
   }
 
   private clearfields() {
