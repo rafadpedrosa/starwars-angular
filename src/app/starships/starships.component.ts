@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Starship} from '../model/starship';
 import {Pageble} from '../model/pageble';
-import {MessageService} from '../services/message.service';
-import {StarshipsService} from '../services/starships.service';
+import {MessageService} from '../services/implementation/message.service';
+import {StarshipsService} from '../services/implementation/starships.service';
 import {MatTableDataSource} from '@angular/material';
 
 @Component({
@@ -22,40 +22,27 @@ export class StarshipsComponent implements OnInit, OnDestroy {
               private messageService: MessageService) {
   }
 
-  // onSelect(starship) {
-  //   this.messageService.add('Starships ' + starship.name + ' fetched for edit')
-  //   this.starship = starship;
-  // }
-
-  get(url) {
-    this.service.get(url).subscribe((pStarship: Starship) => {
-      this.starship = pStarship;
-    });
-  }
-
   ngOnDestroy() {
-    console.log('ngOnDestroy - ships')
     this.clearfields();
   }
 
   reloadTable(event = null) {
     this.starshipDataSource = new MatTableDataSource(this.starships_all);
 
-    this.service.getStarShips(event).subscribe((pStarships: Pageble<Starship>) => {
+    this.service.getList(event).subscribe((pStarships: Pageble<Starship>) => {
       this.pageableStarShips = pStarships;
       this.starships_all = pStarships.results;
       this.starshipDataSource = new MatTableDataSource(this.starships_all);
       this.starships_all.forEach((pStarship: Starship) => {
         pStarship.characters = [];
         pStarship.pilots.forEach((pUrl: string) => {
-          this.service.getDependency(pStarship, pUrl, 'pilot');
+          this.service.getDependency(pStarship, 'pilot', pUrl);
         });
       });
     });
   }
 
   ngOnInit() {
-    console.log('ngOnInit - ships');
     this.reloadTable();
   }
 

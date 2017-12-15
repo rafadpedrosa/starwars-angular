@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Planet} from '../model/planet';
-import {PlanetService} from '../services/planet.service';
+import {PlanetService} from '../services/implementation/planet.service';
 
 @Component({
   selector: 'app-planet-form',

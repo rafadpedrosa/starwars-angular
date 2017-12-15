@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Character} from '../model/character';
-import {CharacterService} from '../services/character.service';
-import {MessageService} from '../services/message.service';
+import {CharacterService} from '../services/implementation/character.service';
+import {MessageService} from '../services/implementation/message.service';
 import {Pageble} from '../model/pageble';
 import {MatTableDataSource} from '@angular/material';
 
@@ -21,17 +21,6 @@ export class CharactersComponent implements OnInit, OnDestroy {
               private messageService: MessageService) {
   }
 
-  // onSelect(character) {
-  //   this.messageService.add('Character ' + character.name + ' fetched for edit')
-  //   this.character = character;
-  // }
-
-  get(url) {
-    this.service.get(url).subscribe((pCharacter: Character) => {
-      this.character = pCharacter;
-    });
-  }
-
   private clearfields() {
     this.characters_all = [];
     this.character = null;
@@ -44,7 +33,8 @@ export class CharactersComponent implements OnInit, OnDestroy {
   }
 
   reloadTable(pageEvent = null) {
-    this.service.getCharacters(pageEvent).subscribe((pCharacters: Pageble<Character>) => {
+    this.messageService.add('Characters list Fetched!');
+    this.service.getList(pageEvent).subscribe((pCharacters: Pageble<Character>) => {
       this.pageableChar = pCharacters;
       this.characters_all = pCharacters.results;
       this.characterDataSource = new MatTableDataSource(this.characters_all);

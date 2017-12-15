@@ -30,6 +30,13 @@
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let ship">
         <button mat-raised-button
+                [routerLink]="'/starship/' + ship.url.match('[0-9]+')[0]"
+                color="primary"
+                style="margin-left: 5px"
+                class="accent pull-right">
+          Go to
+        </button>
+        <button mat-raised-button
                 color="primary"
                 class="pull-right"
                 (click)="starship = ship">Detail

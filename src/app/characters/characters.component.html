@@ -22,9 +22,16 @@
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let char">
         <button mat-raised-button
+                [routerLink]="'/character/' + char.url.match('[0-9]+')[0]"
+                color="primary"
+                style="margin-left: 5px"
+                class="accent pull-right">
+          Go to
+        </button>
+        <button mat-raised-button
                 color="primary"
                 class="pull-right"
-                (click)="character = char">Detail
+                (click)="character = char">Show
         </button>
       </mat-cell>
     </ng-container>
