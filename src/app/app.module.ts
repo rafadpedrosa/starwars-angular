@@ -7,7 +7,7 @@ import { CharacterService } from './services/implementation/character.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CharactersComponent } from './characters/characters.component';
+import { CharacterListComponent } from './characters/characterList.component';
 import { CharacterFormComponent } from './characters/character-form/character-form.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './services/implementation/message.service';
@@ -19,7 +19,7 @@ import { VaderForceComponent } from './shared/vader-force/vader-force.component'
 import { BrandComponent } from './shared/brand/brand.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { StarshipsComponent } from './starships/starships.component';
+import { StarshipListComponent } from './starships/starshipList.component';
 import { StarshipsService } from './services/implementation/starships.service';
 import { StarshipsFormComponent } from './starships/starships-form/starships-form.component';
 import { CharacterComponent } from './characters/character.component';
@@ -28,7 +28,7 @@ import { StarshipComponent } from './starships/starship.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CharactersComponent,
+    CharacterListComponent,
     CharacterFormComponent,
     MessagesComponent,
     AppHeaderComponent,
@@ -37,7 +37,7 @@ import { StarshipComponent } from './starships/starship.component';
     BrandComponent,
     HomeComponent,
     FooterComponent,
-    StarshipsComponent,
+    StarshipListComponent,
     StarshipsFormComponent,
     CharacterComponent,
     StarshipComponent

@@ -7,10 +7,10 @@ import {MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-characters',
-  templateUrl: './characters.component.html',
-  styleUrls: ['./characters.component.scss']
+  templateUrl: './characterList.component.html',
+  styleUrls: ['./characterList.component.scss']
 })
-export class CharactersComponent implements OnInit, OnDestroy {
+export class CharacterListComponent implements OnInit, OnDestroy {
   characters_all: Character[];
   character: Character = null;
   pageableChar: Pageble<Character>;

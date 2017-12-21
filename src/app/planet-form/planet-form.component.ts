@@ -16,7 +16,7 @@ export class PlanetFormComponent implements OnInit {
   }
 
   get(url) {
-    this.service.get(url).subscribe((pPlanet: Planet) => {
+    this.service.getByUrl(url).subscribe((pPlanet: Planet) => {
       this.planet = pPlanet;
     });
   }

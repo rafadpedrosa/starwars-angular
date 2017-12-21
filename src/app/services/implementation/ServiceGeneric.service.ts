@@ -26,6 +26,7 @@ export class ServiceGeneric<T> implements IServiceGeneric<T> {
   }
 
   public getList(pageEvent = null): Observable<Pageble<T>> {
+    console.log('passou por mim!');
     const url = pageEvent ? this.api + '?page=' + (pageEvent.pageIndex + 1) : this.api;
     return this.http.get<Pageble<T>>(url);
   }

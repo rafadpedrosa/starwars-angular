@@ -7,10 +7,10 @@ import {MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-starships',
-  templateUrl: './starships.component.html',
-  styleUrls: ['./starships.component.scss']
+  templateUrl: './starshipList.component.html',
+  styleUrls: ['./starshipList.component.scss']
 })
-export class StarshipsComponent implements OnInit, OnDestroy {
+export class StarshipListComponent implements OnInit, OnDestroy {
   starships_all: Starship[];
   starship: Starship = null;
   displayedColumns = ['name', 'model', 'manufacturer', 'cost_in_credits', 'actions'];

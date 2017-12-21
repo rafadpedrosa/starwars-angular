@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 63.0.3239 (Windows 10 0.0.0)" package="" timestamp="2017-12-21T13:59:24" id="0" hostname="ICCSO-038559-NB" tests="21" errors="0" failures="0" time="0.081">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36"/>
+  </properties>
+  <testcase name="CharacterService should be created" time="0.072" classname="Chrome_63_0_3239_(Windows_10_0_0_0).CharacterService"/>
+  <testcase name="CharacterService should call Characters list" time="0.009" classname="Chrome_63_0_3239_(Windows_10_0_0_0).CharacterService"/>
+  <testcase name="CharacterService should receive Characters list array" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).CharacterService">
+    <skipped/>
+  </testcase>
+  <testcase name="AppComponent should create the Star Wars App" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).AppComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="AppComponent should have as title 'Star Wars App'" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).AppComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="CharacterFormComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).CharacterFormComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="CharacterComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).CharacterComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="CharacterListComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).CharacterListComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="HomeComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).HomeComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="MessagesComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).MessagesComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="PlanetFormComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).PlanetFormComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="MessageService should be created" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).MessageService">
+    <skipped/>
+  </testcase>
+  <testcase name="PlanetService should be created" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).PlanetService">
+    <skipped/>
+  </testcase>
+  <testcase name="StarshipsService should be created" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).StarshipsService">
+    <skipped/>
+  </testcase>
+  <testcase name="AppHeaderComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).AppHeaderComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="BrandComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).BrandComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="FooterComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).FooterComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="VaderForceComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).VaderForceComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="StarshipComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).StarshipComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="StarshipListComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).StarshipListComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="StarshipsFormComponent should create" time="0" classname="Chrome_63_0_3239_(Windows_10_0_0_0).StarshipsFormComponent">
+    <skipped/>
+  </testcase>
+  <system-out>
+    <![CDATA[Chrome 63.0.3239 (Windows 10 0.0.0) LOG: 'passou por mim!'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
